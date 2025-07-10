@@ -1,0 +1,16 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /erp
+spring:
+  config:
+    import: "classpath:database.yml"
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  web:
+    resources:
+      static-locations: classpath:/static/
+      add-mappings: true

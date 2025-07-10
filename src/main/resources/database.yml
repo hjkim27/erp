@@ -1,0 +1,12 @@
+# database.yml for product
+spring:
+  datasource:
+    hikari:
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://127.0.0.1:5432/erp
+      username: postgres
+      password: 1234
+      maximum-pool-size: 3
+      auto-commit: false
+      schema: public
+      pool-name: db1
