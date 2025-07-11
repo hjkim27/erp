@@ -1,4 +1,4 @@
-package com.example.demo;
+package hjkim27.dev;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

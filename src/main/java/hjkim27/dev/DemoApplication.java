@@ -1,4 +1,4 @@
-package com.example.demo;
+package hjkim27.dev;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
