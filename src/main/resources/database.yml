@@ -3,9 +3,9 @@ spring:
   datasource:
     hikari:
       driver-class-name: org.postgresql.Driver
-      jdbc-url: jdbc:postgresql://127.0.0.1:5432/erp
-      username: postgres
-      password: 1234
+      jdbc-url: jdbc:postgresql://${HJKIM_ERP_HOST:127.0.0.1}:${HJKIM_ERP_PORT:5432}/${HJKIM_ERP_DBNAME:erp}
+      username: ${HJKIM_ERP_USERNAME:postgres}
+      password: ${HJKIM_ERP_PASSWORD:1234}
       maximum-pool-size: 3
       auto-commit: false
       schema: public
