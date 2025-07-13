@@ -39,21 +39,24 @@ public class GeneralConfig {
         Properties prop = new Properties();
         // FileNotFoundException 발생으로 읽는 방식 변경
         try (InputStream fis = GeneralConfig.class.getClassLoader().getResourceAsStream("generalConfig.properties")) {
-            prop.load(fis);
-            prop.keySet().forEach(key -> {
-                String keyStr = key.toString();
-                switch (keyStr) {
-                    case "LOG_LEVEL":
-                        DEBUG_MODE = prop.getProperty((String) key).equals("DEBUG");
-                        break;
-                    case "test":
-                        break;
-                }
-            });
+            if (fis != null) {
+                prop.load(fis);
+                prop.keySet().forEach(key -> {
+                    String keyStr = key.toString();
+                    switch (keyStr) {
+                        case "LOG_LEVEL":
+                            DEBUG_MODE = prop.getProperty((String) key).equals("DEBUG");
+                            break;
+                        case "test":
+                            break;
+                    }
+                });
+            } else {
+                throw new FileNotFoundException("property file not found in classpath");
+            }
 
         } catch (FileNotFoundException e) {
-            log.error("{} || ", e.getMessage(), e);
-            throw new RuntimeException(e);
+            log.warn("{} || ", e.getMessage(), e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

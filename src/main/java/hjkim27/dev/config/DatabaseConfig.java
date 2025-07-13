@@ -17,6 +17,7 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
@@ -39,6 +40,8 @@ public class DatabaseConfig {
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
+        log.info(hikariConfig().getJdbcUrl());
+
         HikariDataSource dataSource = new HikariDataSource(hikariConfig());
         log.info("getDriverClassName: {}", dataSource.getDriverClassName());
         log.info("getJdbcUrl: {}", dataSource.getJdbcUrl());
@@ -72,7 +75,15 @@ public class DatabaseConfig {
 
         sqlSessionFactoryBean.setConfiguration(config);
 
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/**/*.xml"));
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        try {
+            Resource[] resources = resolver.getResources("classpath*:mapper/**/*.xml");
+            if (resources.length > 0) {
+                sqlSessionFactoryBean.setMapperLocations(resources);
+            }
+        } catch (Exception e) {
+            log.warn("No mapper XML files found. Skipping setMapperLocations.");
+        }
         sqlSessionFactoryBean.setTypeAliasesPackage("hjkim27.dev.bean.dto");
         return sqlSessionFactoryBean.getObject();
     }
