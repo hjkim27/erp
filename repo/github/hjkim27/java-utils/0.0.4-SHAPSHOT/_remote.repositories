@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Jun 08 00:15:40 KST 2025
+java-utils-0.0.4-SNAPSHOT.jar>=
+java-utils-0.0.4-SNAPSHOT-sources.jar>=
+java-utils-0.0.4-SNAPSHOT.pom>=
