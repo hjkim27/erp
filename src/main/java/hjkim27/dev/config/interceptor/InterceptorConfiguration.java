@@ -30,24 +30,38 @@ public class InterceptorConfiguration implements WebMvcConfigurer {
             "/WEB-INF/**"
     };
 
-    public static final String[] URL_PATTERNS = {
+    public static final String[] LOGIN_PATTERNS = {
             "/**",
     };
 
-    public static final String[] EXCLUDE_URL_PATTERNS = {
+    public static final String[] NO_LOGIN_PATTERNS = {
             "/sign/**",
             "/home/**",
             "/sse/**"
+    };
+
+    public static final String[] ADMIN_PATTERNS = {
+            "/admin/**",
     };
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         try {
             registry.addInterceptor(new ProjectInterceptor())
-                    .addPathPatterns(URL_PATTERNS)
+                    .addPathPatterns(LOGIN_PATTERNS)
                     .addPathPatterns("/")
                     .excludePathPatterns(RESOURCE_PATTERNS)
-                    .excludePathPatterns(EXCLUDE_URL_PATTERNS);
+                    .excludePathPatterns(NO_LOGIN_PATTERNS);
+
+            registry.addInterceptor(new LoginInterceptor())
+                    .addPathPatterns(LOGIN_PATTERNS)
+                    .excludePathPatterns(RESOURCE_PATTERNS)
+                    .excludePathPatterns(NO_LOGIN_PATTERNS);
+
+            registry.addInterceptor(new AdminInterceptor())
+                    .addPathPatterns(ADMIN_PATTERNS)
+                    .excludePathPatterns(RESOURCE_PATTERNS)
+                    .excludePathPatterns(NO_LOGIN_PATTERNS);
 
             // 공통 변수 추가를 위한 interceptor 추가
             registry.addInterceptor(new GlobalAttributeInterceptor());
