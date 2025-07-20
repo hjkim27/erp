@@ -40,6 +40,10 @@ public class GlobalAttributeInterceptor implements HandlerInterceptor {
             modelAndView.getModelMap();
 
             modelAndView.addObject("DEBUG_MODE", GeneralConfig.DEBUG_MODE);
+
+            // 수정페이지 확인용
+            String viewName = modelAndView.getViewName();
+            modelAndView.addObject("IS_EDIT", viewName.contains("edit"));
         }
     }
 

@@ -19,6 +19,7 @@
 <script type="text/javascript" src="${contextPath}/static/js/default/common.js"></script>
 <script type="text/javascript" src="${contextPath}/static/js/default/param-checker.js"></script>
 <script type="text/javascript" src="${contextPath}/static/js/default/valid-utils.js"></script>
+<link type="text/css" href="${contextPath}/static/css/default/common.css"/>
 
 <%-- custom component --%>
 <script type="text/javascript" src="${contextPath}/static/custom-lib/select-box/select-box.js"></script>

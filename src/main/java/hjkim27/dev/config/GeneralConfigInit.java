@@ -28,11 +28,11 @@ public class GeneralConfigInit {
 
     private Boolean debugMode;
 
-    private final Boolean DEFAULT_BOOL_VAL = false;
+    private final Boolean DEFAULT_BOOLEAN = false;
 
     @PostConstruct
     public void INIT() {
-        GeneralConfig.DEBUG_MODE = (debugMode != null) ? debugMode : DEFAULT_BOOL_VAL;
+        GeneralConfig.DEBUG_MODE = (debugMode != null) ? debugMode : DEFAULT_BOOLEAN;
         log.info("INIT start =====");
         PRINT_PARAMETER(GeneralConfig.class.getDeclaredFields());   // 클래스 내 선언된 모든 필드 가져오기
         log.info("INIT END =======");
