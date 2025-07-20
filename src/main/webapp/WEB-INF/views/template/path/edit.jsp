@@ -2,20 +2,14 @@
   Created by IntelliJ IDEA.
   User: hjkim27
   Date: 2025-07-16
-  Time: 오후 11:04
+  Time: 오후 11:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
-<%@ taglib prefix="" uri="jakarta.tags.functions"%>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 
-<html>
-<head>
-    <title>Title</title>
-    <%@include file="/WEB-INF/views/layout/header/common-header.jsp" %>
-</head>
-<body>
-
-</body>
-</html>
+<div class="edit-container">
+    edit
+</div>
