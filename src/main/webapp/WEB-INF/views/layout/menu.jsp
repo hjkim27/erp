@@ -11,5 +11,24 @@
 <jsp:include page="variables.jsp"/>
 
 <div class="menu-container">
-    menu
+    <div class="flex-item left-item">
+        <div class="logo">
+            logo
+            <%--logo--%>
+        </div>
+        <div class="menu">
+            <div class="menu-item">menu1</div>
+            <div class="menu-item">menu2</div>
+            <div class="menu-item">menu3</div>
+        </div>
+    </div>
+    <div class="flex-item flex-item">
+        <div class="search">
+            search
+        </div>
+        <div class="menu">
+            icon
+            <%-- 마우수 hover 시 열리는 메뉴--%>
+        </div>
+    </div>
 </div>
