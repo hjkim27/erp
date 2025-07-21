@@ -13,14 +13,15 @@
 
 <%-- fontawesome --%>
 <script type="text/javascript" src="${contextPath}/static/fontawesome/fontawesome-6.7.2/all.min.js"></script>
-<link type="text/css" href="${contextPath}/static/fontawesome/fontawesome-6.7.2/all.min.css"/>
+<link type="text/css" rel="stylesheet" href="${contextPath}/static/fontawesome/fontawesome-6.7.2/all.min.css"/>
 
 <%-- default --%>
 <script type="text/javascript" src="${contextPath}/static/js/default/common.js"></script>
 <script type="text/javascript" src="${contextPath}/static/js/default/param-checker.js"></script>
 <script type="text/javascript" src="${contextPath}/static/js/default/valid-utils.js"></script>
-<link type="text/css" href="${contextPath}/static/css/default/common.css"/>
+<link type="text/css" rel="stylesheet" href="${contextPath}/static/css/default/common.css"/>
+<link type="text/css" rel="stylesheet" href="${contextPath}/static/css/default/menu.css"/>
 
 <%-- custom component --%>
 <script type="text/javascript" src="${contextPath}/static/custom-lib/select-box/select-box.js"></script>
-<link type="text/css" href="${contextPath}/static/custom-lib/select-box/select-box.css"/>
+<link type="text/css" rel="stylesheet" href="${contextPath}/static/custom-lib/select-box/select-box.css"/>
