@@ -15,13 +15,13 @@ public class TestController {
     @GetMapping("/")
     public ModelAndView home() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("test");
+        mav.setViewName("index");
         return mav;
     }
 
     @GetMapping("/test")
     public ModelAndView home1() {
-        return new ModelAndView("test");
+        return new ModelAndView("index");
     }
 
     @RequestMapping("main")
